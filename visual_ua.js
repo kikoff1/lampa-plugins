@@ -20,14 +20,6 @@
   
     // Конфігурація стилів  
     const STYLES = {  
-        '.torrent-item__seeds span.high-seeds': {  
-            color: '#00ff00',  
-            'font-weight': 'bold'  
-        },  
-        '.torrent-item__bitrate span.high-bitrate': {  
-            color: '#ff0000',  
-            'font-weight': 'bold'  
-        },  
         '.torrent-item__tracker.utopia': {  
             color: '#9b59b6',  
             'font-weight': 'bold'  
@@ -138,16 +130,6 @@
   
     // Функція для оновлення стилів торентів  
     function updateTorrentStyles() {  
-        // Seeds > 19  
-        document.querySelectorAll('.torrent-item__seeds span').forEach(span => {  
-            span.classList.toggle('high-seeds', (parseInt(span.textContent) || 0) > 19);  
-        });  
-  
-        // Бітрейт > 50  
-        document.querySelectorAll('.torrent-item__bitrate span').forEach(span => {  
-            span.classList.toggle('high-bitrate', (parseFloat(span.textContent) || 0) > 50);  
-        });  
-  
         // Трекери  
         document.querySelectorAll('.torrent-item__tracker').forEach(tracker => {  
             const text = tracker.textContent.trim();  
